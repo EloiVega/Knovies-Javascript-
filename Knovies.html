@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Our main stylesheet -->
+    <link rel="stylesheet" href="Css/Knovies.css">
+    
+    <!-- Removing extra browser effects -->
+    <link rel="stylesheet" href="Css/normalize.css">
+    <!-- Font awesome css library -->
+    <link rel="stylesheet" href="Css/all.min.css">
+
+    <Title>Knovies</Title>
+</head>
+
+<body>
+
+    <!-- start Header -->
+
+    <div class="header">
+        <div class="container">
+            <div class="logo"><a href="#">Kn<span>ovies</span></a></div>
+
+            <span class="icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+
+            <div class="darken"></div>
+            <div class="sidebar">
+                <div class="logo-container">Kn<span>ovies</span></div>
+                <ul>
+                    <li><a href="#"><i class="fas fa-film"></i>Movies</a></li>
+                    <li><a href="#"><i class="fas fa-play-circle"></i>Series</a></li>
+                    <li><a href="#"><i class="fas fa-users"></i>Actors</a></li>
+                </ul>
+            </div>
+
+            <div class="login-Info">
+                <i class="fas fa-user"></i>
+                <a href="login.html">Login</a>
+                <a href="signUp.html">Sign Up</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- end Header  -->
+
+    <!-- start Search   -->
+
+    <div class="search">
+        <div class="background">
+            <div></div>
+            <div></div>
+        </div>
+        <form action="Search.html" method = "GET">
+            <div class="bar">
+                <input type="text" name="query">
+                <button type = "submit">Search</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- end Search -->
+
+    <!-- start Section -->
+    
+    <div class="content">
+        <div class="section">
+            <h1 class="section-heading">Movies</h1>
+
+            <div class="partition">
+                <div class="info">
+                    <h2>Trending</h2>
+                    <div class="toggle">
+                        <span>Today</span>
+                        <span style="color: #c0b68c">Weekly</span>
+                        <div class="selected"></div>
+                    </div>
+                </div>
+                <div class="list horizontalSlider"></div>
+            </div>
+
+            <div class="partition" style="background-color: transparent;">
+                <div class="info">
+                    <h2>Popular</h2>
+                </div>
+                <div class="list horizontalSlider"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="content">
+        <div class="section">
+            <h1 class="section-heading">Series</h1>
+
+            <div class="partition">
+                <div class="info">
+                    <h2>Trending</h2>
+                    <div class="toggle">
+                        <span>Today</span>
+                        <span style="color: #c0b68c">Weekly</span>
+                        <div class="selected"></div>
+                    </div>
+                </div>
+                <div class="list horizontalSlider"></div>
+            </div>
+
+            <div class="partition" style="background-color: transparent;">
+                <div class="info">
+                    <h2>Popular</h2>
+                </div>
+                <div class="list horizontalSlider"></div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="trending">
+        
+        <div class="toggle">
+            <span>Movies</span>
+            <span>Series</span>
+            <div class="selected"></div>
+        </div>
+        
+        <div class="timeSpan">
+            <select>
+                <option value="day">Today</option>
+                <option value="Week">This Week</option>
+            </select>    
+        </div>
+
+        <div class="list horizontalSlider"></div>
+    </div> -->
+
+    <!-- end Section -->
+    <script src="Header.js"></script>
+    <script src="SlidingLists.js"></script>
+    <script type="module" src="Knovies.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Main Page Styling -->
+        <link rel="stylesheet" href="Css/Knovies.css">
+
+        <!-- Our main stylesheet -->
+        <link rel="stylesheet" href="Css/Seach.css">
+
+        <!-- Removing extra browser effects -->
+        <link rel="stylesheet" href="Css/normalize.css">
+        <!-- Font awesome css library -->
+        <link rel="stylesheet" href="Css/all.min.css">
+    
+        <Title>Search</Title>
+    </head>
+<body>
+    
+    <!-- start Header -->
+    
+    <div class="darken"></div>
+    <div class="header">
+        <div class="container">
+            <div class="logo"><a href="#">Kn<span>ovies</span></a></div>
+
+            <span class="icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+
+            <div class="sidebar">
+                <div class="logo-container">Kn<span>ovies</span></div>
+                <ul>
+                    <li><a href="#"><i class="fas fa-film"></i>Movies</a></li>
+                    <li><a href="#"><i class="fas fa-play-circle"></i>Series</a></li>
+                    <li><a href="#"><i class="fas fa-users"></i>Actors</a></li>
+                </ul>
+            </div>
+
+            <div class="login-Info">
+                <i class="fas fa-user"></i>
+                <a href="login.html">Login</a>
+                <a href="signUp.html">Sign Up</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- end Header  -->
+
+    <!-- start SearchBar -->
+    <div class="searchBar">
+        <form action="Search.html">
+            <i class="fas fa-search"></i>
+            <input type="search" name="query" placeHolder="looking for something else?">
+        </form>
+    </div>
+    <!-- end SearchBar -->
+
+    <!-- start Main Container -->
+    <div class="mainContainer">
+        <div class="optionList horizontalSlider">
+            <span class = "selected">TV Shows <span>0</span></span>
+            <span>Movies <span>0</span></span>
+            <span>People <span>0</span></span>
+            <span>Collections <span>0</span></span>
+        </div>
+        
+        <div class="content">
+            
+        </div>
+
+    </div>
+    <!-- end Main Container -->
+    <script src="SlidingLists.js"></script>
+    <script src="Header.js"></script>
+    <script src="Search.js"></script>
+</body>
+</html>
