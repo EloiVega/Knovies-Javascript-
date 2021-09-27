@@ -1,0 +1,14 @@
+:root {
+    --main1: #222629;
+    --main2: #303030;
+    --palette1: #1A1A2E;
+    --palette2: #16213E;
+    --palette3: #0F3460;
+    --palette4: #FFD523;
+}
+
+/* Main Container */
+
+.mainContainer .optionList{
+    height: 300px;
+}

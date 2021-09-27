@@ -7,25 +7,25 @@
         
         <!-- Main Page Styling -->
         <link rel="stylesheet" href="Css/Knovies.css">
-
-        <!-- Our main stylesheet -->
         <link rel="stylesheet" href="Css/Seach.css">
+        <!-- Our main stylesheet -->
+        <link rel="stylesheet" href="Css/Explore.css">
 
         <!-- Removing extra browser effects -->
         <link rel="stylesheet" href="Css/normalize.css">
         <!-- Font awesome css library -->
         <link rel="stylesheet" href="Css/all.min.css">
     
-        <Title>Search</Title>
+        <Title>Explore</Title>
     </head>
 <body>
-    
+
     <!-- start Header -->
     
     <div class="darken"></div>
     <div class="header">
         <div class="container">
-            <div class="logo"><a href="#">Kn<span>ovies</span></a></div>
+            <div class="logo"><a href="/Knovies.html">Kn<span>ovies</span></a></div>
 
             <span class="icon">
                 <span></span>
@@ -52,32 +52,36 @@
 
     <!-- end Header  -->
 
-    <!-- start SearchBar -->
-    <div class="searchBar">
-        <form action="Search.html">
-            <i class="fas fa-search"></i>
-            <input type="search" name="query" placeHolder="looking for something else?">
-        </form>
-    </div>
-    <!-- end SearchBar -->
-
     <!-- start Main Container -->
     <div class="mainContainer">
         <div class="optionList horizontalSlider">
-            <span class = "selected">TV Shows <span>0</span></span>
-            <span>Movies <span>0</span></span>
-            <span>People <span>0</span></span>
-            <span>Collections <span>0</span></span>
+            <span class = "selected">Popular</span>
+            <span>Now Playing</span>
+            <span>Upcoming</span>
+            <span>Top Rated</span>
         </div>
         
         <div class="content">
-            
+            <div class="item">
+                
+            </div>
+
+            <div class="item profile">
+                
+            </div>
         </div>
 
     </div>
     <!-- end Main Container -->
+
+    <!-- Controls {Draggable Lists}, providing two classes, (HorizontalSlider and VerticalSlider) -->
     <script src="SlidingLists.js"></script>
+
+    <!-- Controls {Navbar} functionalities -->
     <script src="Header.js"></script>
-    <script src="Search.js"></script>
+
+    <!-- Controls actions done in this page -->
+    <script src="Explore.js"></script>
+
 </body>
 </html>
