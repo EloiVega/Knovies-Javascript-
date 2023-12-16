@@ -1,3 +1,4 @@
+const API_KEY = '06f54617d3313abcae030fd5577428af'
 // ---------- DEFAULT FUNCTION CALLS ---------- //
 var targetList = document.querySelectorAll(".partition .list");
 constructTrending(targetList[0], "trending", "movie", "day");
@@ -10,7 +11,6 @@ constructTrending(targetList[3], "popular", "tv", "day");
 var toggleButtons = document.querySelectorAll(".partition .toggle");
 var toggleSelectedBackground = document.querySelectorAll(".partition .toggle .selected");
 var toggleOptions = document.querySelectorAll(".partition .toggle span");
-
 
 var isDay = [true, true];
 
@@ -59,9 +59,8 @@ function sendRequest(request) {
 async function constructRequest(partition, type, timeSpan) {
     var request;
     var addedData;
-
     addedData = partition == "trending" ? partition + "/" + type + "/" + timeSpan : type + "/" + partition;
-    request = "https://api.themoviedb.org/3/" + addedData + "?api_key=df3b5f4967782c690e9e21861634f917";
+    request = `https://api.themoviedb.org/3/${addedData}?api_key=${API_KEY}`;
     //console.log(request);
 
     return await sendRequest(request);
@@ -102,7 +101,8 @@ function buildTrendingList(data, list) {
         first.className = "rating";
 
         second = document.createElement("span");
-        second.innerText = results[i].vote_average * 10 + "%";
+        const vote_average = results[i].vote_average * 10;
+        second.innerText = parseInt(vote_average) + "%";
         first.appendChild(second);
 
         second = document.createElementNS("http://www.w3.org/2000/svg", "svg");
