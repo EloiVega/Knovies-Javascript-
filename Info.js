@@ -1,3 +1,11 @@
+const request_options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNmY1NDYxN2QzMzEzYWJjYWUwMzBmZDU1Nzc0MjhhZiIsInN1YiI6IjYyZjYwM2U1ZjkxODNhMDA3YTUwMzVhZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.-cVbysrbO3Lj0W3VNMB7SG29Mh5E92yNkzIDQCZVtJ4'
+    }
+};
+
 //URL data Extraction
 const mediaId = location.search.slice(1).split("&");
 
@@ -123,16 +131,21 @@ function sendRequest(request){
 
 //Request Construction
 async function constructRequest(ID, media_type, additions){
-    var request;
-    var addedData;
+    // var request;
+    // var addedData;
 
-    addedData = media_type + "/" + ID;
+    // addedData = media_type + "/" + ID;
 
-    request = "https://api.themoviedb.org/3/" + addedData + "?api_key=df3b5f4967782c690e9e21861634f917";
-    if(additions) request += "&append_to_response=" + additions;
+    // request = "https://api.themoviedb.org/3/" + addedData + "?api_key=df3b5f4967782c690e9e21861634f917";
+    // if(additions) request += "&append_to_response=" + additions;
     // console.log(request);
 
-    return await sendRequest(request);
+    const data = await fetch(`https://api.themoviedb.org/3/${media_type}/${ID}?language=en-US${additions? '&append_to_response=' + additions: ''}`, request_options)
+    .then(response => response.json())
+    .then(data => data)
+    console.log(data);
+    return data;
+    // return await sendRequest(request);
 }
 
 async function ApiCall(ID, media_type, additions, constructFunctionName){

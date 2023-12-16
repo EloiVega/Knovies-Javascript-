@@ -1,4 +1,11 @@
-const API_KEY = '06f54617d3313abcae030fd5577428af'
+const request_options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNmY1NDYxN2QzMzEzYWJjYWUwMzBmZDU1Nzc0MjhhZiIsInN1YiI6IjYyZjYwM2U1ZjkxODNhMDA3YTUwMzVhZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.-cVbysrbO3Lj0W3VNMB7SG29Mh5E92yNkzIDQCZVtJ4'
+    }
+};
+
 // ---------- DEFAULT FUNCTION CALLS ---------- //
 var targetList = document.querySelectorAll(".partition .list");
 constructTrending(targetList[0], "trending", "movie", "day");
@@ -11,6 +18,7 @@ constructTrending(targetList[3], "popular", "tv", "day");
 var toggleButtons = document.querySelectorAll(".partition .toggle");
 var toggleSelectedBackground = document.querySelectorAll(".partition .toggle .selected");
 var toggleOptions = document.querySelectorAll(".partition .toggle span");
+
 
 var isDay = [true, true];
 
@@ -40,7 +48,7 @@ toggleButtons.forEach(element => {
         var list, type, category, timeSpan;
 
         list = idx ? document.querySelectorAll(".partition .list")[2] : document.querySelectorAll(".partition .list")[0];
-        category = "trending";
+        category = "top_rated";
         type = idx ? "tv" : "movie";
         timeSpan = isDay[idx] ? "day" : "week";
 
@@ -52,18 +60,28 @@ toggleButtons.forEach(element => {
 // ---------- RETREIVING DATA ---------- //
 //API Call
 function sendRequest(request) {
+    console.log("fetching data from ... \n "+ request);
     return fetch(request).then(result => result.json()).then(data => data)
 }
 
 //Constructing the request to call the api
 async function constructRequest(partition, type, timeSpan) {
-    var request;
-    var addedData;
-    addedData = partition == "trending" ? partition + "/" + type + "/" + timeSpan : type + "/" + partition;
-    request = `https://api.themoviedb.org/3/${addedData}?api_key=${API_KEY}`;
-    //console.log(request);
+    // var request;
+    // var addedData;
 
-    return await sendRequest(request);
+    // addedData = partition == "trending" ? partition + "/" + type + "/" + timeSpan : type + "/" + partition;
+    // request = "https://api.themoviedb.org/3/" + addedData + "?api_key=06f54617d3313abcae030fd5577428af";
+    // console.log(request);
+
+    // return await sendRequest(request);
+
+    const data = await fetch(`https://api.themoviedb.org/3/movie/${partition === 'top_rated' ? partition: 'popular'}?language=en-US&page=1`, request_options)
+  .then(response => response.json())
+  .then(data => data)
+  .catch(err => console.error(err));
+
+  return data;
+
 }
 
 //Construct data Trending List
@@ -101,8 +119,7 @@ function buildTrendingList(data, list) {
         first.className = "rating";
 
         second = document.createElement("span");
-        const vote_average = results[i].vote_average * 10;
-        second.innerText = parseInt(vote_average) + "%";
+        second.innerText = parseInt(results[i].vote_average * 10) + "%";
         first.appendChild(second);
 
         second = document.createElementNS("http://www.w3.org/2000/svg", "svg");
