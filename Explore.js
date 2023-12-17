@@ -1,7 +1,6 @@
 // ---------- UPDATE REROUTING IN HTML ---------- // This Is A Deployment Fix!
 const pathname = location.pathname.split('/')[1];
-const repo = pathname === 'Knovies-Javascript-'? pathname: '';
-
+let repo = pathname === 'Knovies-Javascript-'? pathname: '';
 // Movie button routing fix
 var header = document.getElementById('header_movie');
 var href = header.getAttribute('href');
