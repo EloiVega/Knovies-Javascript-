@@ -6,12 +6,37 @@ const request_options = {
     }
 };
 
+// ---------- UPDATE REROUTING IN HTML ---------- // This Is A Deployment Fix!
+const pathname = location.pathname.split('/')[1];
+const repo = pathname === 'Knovies-Javascript-/'? pathname: '';
+
+// Movie button routing fix
+var header = document.getElementById('header_movie');
+var href = header.getAttribute('href');
+header.setAttribute('href', repo+href);
+
+// tv button routing fix
+header = document.getElementById('header_tv');
+href = header.getAttribute('href');
+header.setAttribute('href', repo+href);
+
+// person button routing fix
+header = document.getElementById('header_person');
+href = header.getAttribute('href');
+header.setAttribute('href', repo+href);
+
+// login button routing fix
+header = document.getElementById('header_login');
+href = header.getAttribute('href');
+header.setAttribute('href', repo+href);
+
+
 // ---------- DEFAULT FUNCTION CALLS ---------- //
 var targetList = document.querySelectorAll(".partition .list");
-constructTrending(targetList[0], "trending", "movie", "day");
-constructTrending(targetList[1], "popular", "movie", "day");
-constructTrending(targetList[2], "trending", "tv", "day");
-constructTrending(targetList[3], "popular", "tv", "day");
+constructList(targetList[0], "trending", "movie", "day");
+constructList(targetList[1], "popular", "movie", "day");
+constructList(targetList[2], "trending", "tv", "day");
+constructList(targetList[3], "popular", "tv", "day");
 //----------------------------------------------------------//
 
 // ---------- TRENDING BUTTONS CONFIGURATION ---------- //
@@ -52,7 +77,7 @@ toggleButtons.forEach(element => {
         type = idx ? "tv" : "movie";
         timeSpan = isDay[idx] ? "day" : "week";
 
-        constructTrending(list, category, type, timeSpan);
+        constructList(list, category, type, timeSpan);
     });
 });
 //----------------------------------------------------------//
@@ -85,7 +110,7 @@ async function constructRequest(partition, type, timeSpan) {
 }
 
 //Construct data Trending List
-async function constructTrending(list, partition, type, timeSpan) {
+async function constructList(list, partition, type, timeSpan) {
     //console.log(list, partition, type, timeSpan);
     const data = await constructRequest(partition, type, timeSpan);
 
