@@ -6,29 +6,33 @@ const request_options = {
     }
 };
 
-// ---------- UPDATE REROUTING IN HTML ---------- // This Is A Deployment Fix!
-const pathname = location.pathname.split('/')[1];
-const repo = pathname === 'Knovies-Javascript-'? pathname + '/': '';
+// // ---------- UPDATE REROUTING IN HTML ---------- // This Is A Deployment Fix!
+// const pathname = location.pathname.split('/')[1];
+// const repo = pathname === 'Knovies-Javascript-'? pathname + '/': '';
 
-// Movie button routing fix
-var header = document.getElementById('header_movie');
-var href = header.getAttribute('href');
-header.setAttribute('href', repo+href);
+// // Movie button routing fix
+// var header = document.getElementById('header_movie');
+// var href = header.getAttribute('href');
+// header.setAttribute('href', repo+href);
+// // console.log(header, href);
 
-// tv button routing fix
-header = document.getElementById('header_tv');
-href = header.getAttribute('href');
-header.setAttribute('href', repo+href);
+// // tv button routing fix
+// header = document.getElementById('header_tv');
+// href = header.getAttribute('href');
+// header.setAttribute('href', repo+href);
+// // console.log(header, href);
 
-// person button routing fix
-header = document.getElementById('header_person');
-href = header.getAttribute('href');
-header.setAttribute('href', repo+href);
+// // person button routing fix
+// header = document.getElementById('header_person');
+// href = header.getAttribute('href');
+// header.setAttribute('href', repo+href);
+// // console.log(header, href);
 
-// login button routing fix
-header = document.getElementById('header_login');
-href = header.getAttribute('href');
-header.setAttribute('href', repo+href);
+// // login button routing fix
+// header = document.getElementById('header_login');
+// href = header.getAttribute('href');
+// header.setAttribute('href', repo+href);
+// // console.log(header, href);
 
 
 // ---------- DEFAULT FUNCTION CALLS ---------- //
