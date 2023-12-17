@@ -203,7 +203,8 @@ function constructContentList(data, type){
 
             item.addEventListener("click", ()=>{
                 const pathname = location.pathname.split('/')[1];
-                location.href = `${location.origin}/${pathname? pathname+'/' : ''}Info.html?${type}&${results[item.id].id}`;
+                const repo = pathname === 'Knovies-Javascript-/'? pathname: '';
+                location.href = `${location.origin}/${repo}Info.html?${type}&${results[item.id].id}`;
                 // location.href = location.origin + "/Info.html?" + type + "&" + results[item.id].id;
                 // console.log("pressing");
             })

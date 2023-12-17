@@ -165,7 +165,8 @@ function MakePostersClickable(list, type) {
             if (e.clientX == startX) {
                 // console.log(type + "&" + element.id);    
                 const pathname = location.pathname.split('/')[1];
-                location.href = `${location.origin}/${pathname? pathname+'/' : ''}Info.html?${type}&${element.id}`;
+                const repo = pathname === 'Knovies-Javascript-/'? pathname: '';
+                location.href = `${location.origin}/${repo}Info.html?${type}&${element.id}`;
                 // location.href = location.origin + "/Info.html?" + type + "&" + element.id;
                 // console.log(location.origin + "/Info.html?" + type + "&" + element.id);
             }

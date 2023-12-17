@@ -361,7 +361,8 @@ function buildMediaList(data, list, query, includeAnchors, targetIdx){
     
         spanEl.addEventListener("click", () => {
             const pathname = location.pathname.split('/')[1];
-            location.href = `${location.origin}/${pathname? pathname+'/' : ''}Media.html?${mediaId[0]}&${mediaId[1]}`;
+            const repo = pathname === 'Knovies-Javascript-/'? pathname: '';
+            location.href = `${location.origin}/${repo}Media.html?${mediaId[0]}&${mediaId[1]}`;
             // location.href = location.origin + "/Media.html?" + mediaId[0] + "&" + mediaId[1];
         });
     
