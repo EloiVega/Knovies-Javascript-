@@ -163,9 +163,11 @@ function MakePostersClickable(list, type) {
         })
         element.addEventListener("click", (e) => {
             if (e.clientX == startX) {
-                // console.log(type + "&" + element.id);
-                location.href = location.origin + "/Info.html?" + type + "&" + element.id;
-                console.log(location.origin + "/Info.html?" + type + "&" + element.id);
+                // console.log(type + "&" + element.id);    
+                const pathname = location.pathname.split('/')[1];
+                location.href = `${location.origin}/${pathname? pathname+'/' : ''}Info.html?${type}&${element.id}`;
+                // location.href = location.origin + "/Info.html?" + type + "&" + element.id;
+                // console.log(location.origin + "/Info.html?" + type + "&" + element.id);
             }
         });
     }

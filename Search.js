@@ -202,7 +202,9 @@ function constructContentList(data, type){
             item.appendChild(divEl);
 
             item.addEventListener("click", ()=>{
-                location.href = location.origin + "/Info.html?" + type + "&" + results[item.id].id;
+                const pathname = location.pathname.split('/')[1];
+                location.href = `${location.origin}/${pathname? pathname+'/' : ''}Info.html?${type}&${results[item.id].id}`;
+                // location.href = location.origin + "/Info.html?" + type + "&" + results[item.id].id;
                 // console.log("pressing");
             })
 

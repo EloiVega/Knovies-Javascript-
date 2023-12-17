@@ -360,7 +360,9 @@ function buildMediaList(data, list, query, includeAnchors, targetIdx){
         spanEl.textContent = "View More";
     
         spanEl.addEventListener("click", () => {
-            location.href = location.origin + "/Media.html?" + mediaId[0] + "&" + mediaId[1];
+            const pathname = location.pathname.split('/')[1];
+            location.href = `${location.origin}/${pathname? pathname+'/' : ''}Media.html?${mediaId[0]}&${mediaId[1]}`;
+            // location.href = location.origin + "/Media.html?" + mediaId[0] + "&" + mediaId[1];
         });
     
         targets[targetIdx].appendChild(spanEl);

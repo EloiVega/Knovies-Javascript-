@@ -16,7 +16,11 @@ var currentTriggerIdx = 0;
 contsructList(0);
 
 //I control the ability to go back to the mediaInfo page
-document.getElementById("back").addEventListener("click", () => { location.href = location.origin + "/Info.html?" + mediaId[0] + "&" + mediaId[1]})
+document.getElementById("back").addEventListener("click", () => { 
+    const pathname = location.pathname.split('/')[1];
+    location.href = `${location.origin}/${pathname? pathname+'/' : ''}Info.html?${mediaId[0]}&${mediaId[1]}`;
+    // location.href = location.origin + "/Info.html?" + mediaId[0] + "&" + mediaId[1]
+})
 
 
 // I control the clicking event for (the option list)
