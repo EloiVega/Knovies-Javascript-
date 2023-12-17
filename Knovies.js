@@ -8,7 +8,7 @@ const request_options = {
 
 // ---------- UPDATE REROUTING IN HTML ---------- // This Is A Deployment Fix!
 const pathname = location.pathname.split('/')[1];
-const repo = pathname === 'Knovies-Javascript-/'? pathname: '';
+const repo = pathname === 'Knovies-Javascript-'? pathname + '/': '';
 
 // Movie button routing fix
 var header = document.getElementById('header_movie');
@@ -190,7 +190,7 @@ function MakePostersClickable(list, type) {
             if (e.clientX == startX) {
                 // console.log(type + "&" + element.id);    
                 const pathname = location.pathname.split('/')[1];
-                const repo = pathname === 'Knovies-Javascript-/'? pathname: '';
+                const repo = pathname === 'Knovies-Javascript-'? pathname + '/': '';
                 location.href = `${location.origin}/${repo}Info.html?${type}&${element.id}`;
                 // location.href = location.origin + "/Info.html?" + type + "&" + element.id;
                 // console.log(location.origin + "/Info.html?" + type + "&" + element.id);

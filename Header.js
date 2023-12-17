@@ -6,7 +6,7 @@ var darkWindow = document.querySelector(".darken");
 // console.log(document.querySelector(".header .logo"));
 document.querySelector(".header .logo").addEventListener("click", () => {
     const pathname = location.pathname.split('/')[1];
-    const repo = pathname === 'Knovies-Javascript-/'? pathname: '';
+    const repo = pathname === 'Knovies-Javascript-'? pathname + '/': '';
     location.href = `${location.origin}/${repo}index.html`;
 });
 

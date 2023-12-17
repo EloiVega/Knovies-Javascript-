@@ -18,7 +18,7 @@ contsructList(0);
 //I control the ability to go back to the mediaInfo page
 document.getElementById("back").addEventListener("click", () => { 
     const pathname = location.pathname.split('/')[1];
-    const repo = pathname === 'Knovies-Javascript-/'? pathname: '';
+    const repo = pathname === 'Knovies-Javascript-'? pathname + '/': '';
     location.href = `${location.origin}/${repo}Info.html?${mediaId[0]}&${mediaId[1]}`;
     // location.href = location.origin + "/Info.html?" + mediaId[0] + "&" + mediaId[1]
 })
