@@ -1,29 +1,30 @@
 // ---------- UPDATE REROUTING IN HTML ---------- // This Is A Deployment Fix!
 const pathname = location.pathname.split('/')[1];
 let repo = pathname === 'Knovies-Javascript-'? '/' + pathname: '';
+repo = "/Knovies-Javascript-"
 // Movie button routing fix
 var header = document.getElementById('header_movie');
 var href = header.getAttribute('href');
 header.setAttribute('href', repo+href);
-// console.log(header, href);
+console.log(header.getAttribute('href'));
 
 // tv button routing fix
 header = document.getElementById('header_tv');
 href = header.getAttribute('href');
 header.setAttribute('href', repo+href);
-// console.log(header, href);
+console.log(header.getAttribute('href'));
 
 // person button routing fix
 header = document.getElementById('header_person');
 href = header.getAttribute('href');
 header.setAttribute('href', repo+href);
-// console.log(header, href);
+console.log(header.getAttribute('href'));
 
 // login button routing fix
 header = document.getElementById('header_login');
 href = header.getAttribute('href');
 header.setAttribute('href', repo+href);
-// console.log(header, href);
+console.log(header.getAttribute('href'));
 
 
 //Main Variables
