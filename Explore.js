@@ -1,3 +1,32 @@
+// ---------- UPDATE REROUTING IN HTML ---------- // This Is A Deployment Fix!
+const pathname = location.pathname.split('/')[1];
+const repo = pathname === 'Knovies-Javascript-'? pathname: '';
+
+// Movie button routing fix
+var header = document.getElementById('header_movie');
+var href = header.getAttribute('href');
+header.setAttribute('href', repo+href);
+// console.log(header, href);
+
+// tv button routing fix
+header = document.getElementById('header_tv');
+href = header.getAttribute('href');
+header.setAttribute('href', repo+href);
+// console.log(header, href);
+
+// person button routing fix
+header = document.getElementById('header_person');
+href = header.getAttribute('href');
+header.setAttribute('href', repo+href);
+// console.log(header, href);
+
+// login button routing fix
+header = document.getElementById('header_login');
+href = header.getAttribute('href');
+header.setAttribute('href', repo+href);
+// console.log(header, href);
+
+
 //Main Variables
 const mediaType = location.search.slice(1); //Responsible for holding the media type {movies, tv or people}
 
